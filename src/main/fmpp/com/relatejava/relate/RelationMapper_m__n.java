@@ -95,7 +95,7 @@ Map<S1, Set<S1S${level2}>> sub1sub${level2});
     private final Map<R, Set<S${s1}>> sub${s1}s = new LinkedHashMap<>();
 </#list>
 <#list 1..level2 as s2>
-    private final Map<Tuple2<R, S1>, Set<S1S${s2}>> sub1sub${s2}s = new LinkedHashMap<>();
+    private final Map<Pair<R, S1>, Set<S1S${s2}>> sub1sub${s2}s = new LinkedHashMap<>();
 </#list>
 
 <#list 1..level2 as s2>
@@ -105,7 +105,7 @@ Map<S1, Set<S1S${level2}>> sub1sub${level2});
         for (S1 s1 : sub1s.get(root)) {
             result.put(
                 s1,
-                sub1sub${s2}s.get(new Tuple2<>(root, s1)));
+                sub1sub${s2}s.get(new Pair<>(root, s1)));
         }
 
         return result;
@@ -142,7 +142,7 @@ Map<S1, Set<S1S${level2}>> sub1sub${level2});
      * @param sub1sub${s2} The related sub-sub-object
      */
     public void relate_1_${s2}(R root, S1 sub1, S1S${s2} sub1sub${s2}) {
-        Tuple2<R, S1> tuple = new Tuple2<>(root, sub1);
+        Pair<R, S1> tuple = new Pair<>(root, sub1);
         sub1sub${s2}s.putIfAbsent(tuple, new LinkedHashSet<S1S${s2}>());
         sub1sub${s2}s.get(tuple).add(sub1sub${s2});
     }
