@@ -9,11 +9,50 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <netbeans.hint.license>gpl30</netbeans.hint.license>
+        <netbeans.hint.license>apache20</netbeans.hint.license>
     </properties>
+    
+    <scm>
+        <developerConnection>scm:git:git@github.com:ilmoeuro/relate.git</developerConnection>
+        <url>git@github.com:ilmoeuro/relate.git</url>
+        <connection>scm:git:git@github.com:ilmoeuro/relate.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/ilmoeuro/relate/issues</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>Apache License, Verson 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>ilmoeuro</id>
+            <email>ilmo.euro@gmail.com</email>
+            <name>Ilmo Euro</name>
+            <roles>
+                <role>Owner</role>
+            </roles>
+        </developer>
+    </developers>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <configuration>
+                    <sourcepath>${project.basedir}/src/main/java:${project.build.directory}/generated-sources/maven-antrun-plugin</sourcepath>
+                </configuration>
+            </plugin>
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.8</version>
@@ -24,12 +63,12 @@
                         <configuration>
                             <target>
                                 <taskdef name="fmpp"
-                                     classname="fmpp.tools.AntTask"
-                                     classpathref="maven.plugin.classpath" />
+                                         classname="fmpp.tools.AntTask"
+                                         classpathref="maven.plugin.classpath" />
                                 <fmpp
                                     sourceRoot="${project.basedir}/src/main/fmpp"
                                     outputRoot="${project.build.directory}/generated-sources/maven-antrun-plugin"
-                                    />
+                                />
                             </target>
                         </configuration>
                         <goals>
