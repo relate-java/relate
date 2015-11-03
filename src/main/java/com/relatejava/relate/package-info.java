@@ -20,7 +20,7 @@
  * <p>This package contains mappers that take relational data as input and produce
  * object graphs based on them. The data can originate anywhere, but the most
  * typical use-case is result sets produced by joining tables in a relational
- * database. The package is type-safe, so there's multiple mappers with
+ * database. The package is type-safe, so there's multiple mapper classes with
  * different child-parent relationships and different number of type parameters.</p>
  * 
  * <p><b>Naming scheme of classes:</b></p>
