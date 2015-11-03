@@ -13,20 +13,20 @@
     </properties>
     
     <scm>
-        <developerConnection>scm:git:git@github.com:ilmoeuro/relate.git</developerConnection>
-        <url>git@github.com:ilmoeuro/relate.git</url>
-        <connection>scm:git:git@github.com:ilmoeuro/relate.git</connection>
+        <developerConnection>scm:git:git@github.com:relate-java/relate.git</developerConnection>
+        <url>git@github.com:relate-java/relate.git</url>
+        <connection>scm:git:git@github.com:relate-java/relate.git</connection>
         <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/ilmoeuro/relate/issues</url>
+        <url>https://github.com/relate-java/relate/issues</url>
     </issueManagement>
 
     <licenses>
         <license>
-            <name>Apache License, Verson 2.0</name>
+            <name>The Apache License, Verson 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0</url>
             <distribution>repo</distribution>
         </license>
@@ -34,9 +34,8 @@
 
     <developers>
         <developer>
-            <id>ilmoeuro</id>
-            <email>ilmo.euro@gmail.com</email>
             <name>Ilmo Euro</name>
+            <email>ilmo.euro@gmail.com</email>
             <roles>
                 <role>Owner</role>
             </roles>
