@@ -78,52 +78,41 @@
                 </dependencies>
             </plugin>
             <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals> 
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin> 
+                <artifactId>maven-javadoc-plugin</artifactId> 
+                <version>2.10.3</version>
+                <configuration>
+                    <sourcepath>${project.basedir}/src/main/java:${project.build.directory}/generated-sources/maven-antrun-plugin</sourcepath>
+                </configuration>
+                <executions> 
+                    <execution> 
+                        <id>attach-javadocs</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals> 
+                    </execution> 
+                </executions> 
+            </plugin>
+            <plugin>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <releaseProfiles>release</releaseProfiles>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-    <profiles>
-        <profile>
-            <id>release</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>2.4</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals> 
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin> 
-                        <artifactId>maven-javadoc-plugin</artifactId> 
-                        <version>2.10.3</version>
-                        <configuration>
-                            <sourcepath>${project.basedir}/src/main/java:${project.build.directory}/generated-sources/maven-antrun-plugin</sourcepath>
-                        </configuration>
-                        <executions> 
-                            <execution> 
-                                <id>attach-javadocs</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals> 
-                            </execution> 
-                        </executions> 
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
