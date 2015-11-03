@@ -67,6 +67,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /* This code is auto-generated; do not modify */
 package com.relatejava.relate;
 
@@ -78,7 +79,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * A class that maps relational data to object trees. Use <code>root</code>
+ * A class that maps relational data to object graphs. Use <code>root</code>
  * to set up roots, <code>relate_*</code> to set up relations, and
  * <code>build</code> to obtain the object graphs.
  *
@@ -136,7 +137,7 @@ public class ${className}<
 > {
 
     /**
-     * A builder interface for object tree roots.
+     * A builder interface for object trees, used by <code>build()</code>
      * 
      * @param <T> The type of the resulting object tree.
      * @param <R> The type of the root object.
@@ -164,7 +165,7 @@ public class ${className}<
 </#list>
 </#if>
      */
-    public interface CompositeFactory<
+    public interface ObjectGraphFactory<
          T
         ,R
 <#list 1..subObjects as subObject>
@@ -427,7 +428,7 @@ public class ${className}<
      * @return The object graphs.
      */
     public <T> List<T> build(
-        CompositeFactory<
+        ObjectGraphFactory<
              T
             ,R
 <#list 1..subObjects as subObject>

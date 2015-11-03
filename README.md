@@ -15,6 +15,8 @@ child-parent relationships and different number of type parameters.
     c = number of sub-children of second child
     d = number of sub-children of third child
     e = number of sub-children of fourth child
+
+*(note the double underscore after `a`)*
  
 **Usage example:**
 
