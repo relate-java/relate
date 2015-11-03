@@ -6,6 +6,39 @@ is result sets produced by joining tables in a relational database. The
 mapping is type-safe, so there's multiple mappers with different
 child-parent relationships and different number of type parameters.
 
+**Setting up for Maven**
+
+```xml
+<project ...>
+
+    ...
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>relate-java</id>
+            <name>relate-java</name>
+            <url>http://dl.bintray.com/relate-java/relate-java</url>
+        </repository>
+    </repositories>
+
+    ...
+
+    <dependencies>
+        <dependency>
+            <groupId>com.relatejava</groupId>
+            <artifactId>relate</artifactId>
+            <version>0.2</version>
+        </dependency>
+    <dependencies>
+
+    ...
+
+</project>
+```
+
 **Naming scheme of classes:**
 
     RelationMapper_a__b_c_d_e
