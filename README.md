@@ -30,7 +30,7 @@ child-parent relationships and different number of type parameters.
         <dependency>
             <groupId>com.relatejava</groupId>
             <artifactId>relate</artifactId>
-            <version>0.2</version>
+            <version>0.5</version>
         </dependency>
     <dependencies>
 
