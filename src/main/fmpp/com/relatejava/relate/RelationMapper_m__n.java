@@ -277,41 +277,41 @@ public class ${className}<
         <#list 1..sub1subObjects as subsubObject>
         sub${subObject}sub${subsubObject}s.putIfAbsent(
             root,
-            new LinkedHashMap<S${subObject}, Set<S${subObject}S${subsubObject}>>());
+            new LinkedHashMap<>());
         sub${subObject}sub${subsubObject}s.get(root).putIfAbsent(
             sub${subObject},
-            new LinkedHashSet<S${subObject}S${subsubObject}>());
+            new LinkedHashSet<>());
         </#list>
     <#elseif (subObject == 2)>
         <#list 1..sub2subObjects as subsubObject>
         sub${subObject}sub${subsubObject}s.putIfAbsent(
             root,
-            new LinkedHashMap<S${subObject}, Set<S${subObject}S${subsubObject}>>());
+            new LinkedHashMap<>());
         sub${subObject}sub${subsubObject}s.get(root).putIfAbsent(
             sub${subObject},
-            new LinkedHashSet<S${subObject}S${subsubObject}>());
+            new LinkedHashSet<>());
         </#list>
     <#elseif (subObject == 3)>
         <#list 1..sub3subObjects as subsubObject>
         sub${subObject}sub${subsubObject}s.putIfAbsent(
             root,
-            new LinkedHashMap<S${subObject}, Set<S${subObject}S${subsubObject}>>());
+            new LinkedHashMap<>());
         sub${subObject}sub${subsubObject}s.get(root).putIfAbsent(
             sub${subObject},
-            new LinkedHashSet<S${subObject}S${subsubObject}>());
+            new LinkedHashSet<>());
         </#list>
     <#elseif (subObject == 4)>
         <#list 1..sub4subObjects as subsubObject>
         sub${subObject}sub${subsubObject}s.putIfAbsent(
             root,
-            new LinkedHashMap<S${subObject}, Set<S${subObject}S${subsubObject}>>());
+            new LinkedHashMap<>());
         sub${subObject}sub${subsubObject}s.get(root).putIfAbsent(
             sub${subObject},
-            new LinkedHashSet<S${subObject}S${subsubObject}>());
+            new LinkedHashSet<>());
         </#list>
     </#if>
 <#else>
-        sub${subObject}s.putIfAbsent(root, new LinkedHashSet<S${subObject}>());
+        sub${subObject}s.putIfAbsent(root, new LinkedHashSet<>());
         sub${subObject}s.get(root).add(sub${subObject});
 </#if>
     }
@@ -333,10 +333,10 @@ public class ${className}<
         root(root);
         sub1sub${sub1subObject}s.putIfAbsent(
              root
-            ,new LinkedHashMap<S1, Set<S1S${sub1subObject}>>());
+            ,new LinkedHashMap<>());
         sub1sub${sub1subObject}s.get(root).putIfAbsent(
              sub1
-            ,new LinkedHashSet<S1S${sub1subObject}>());
+            ,new LinkedHashSet<>());
         sub1sub${sub1subObject}s.get(root).get(sub1).add(
              sub1sub${sub1subObject});
     }
@@ -358,10 +358,10 @@ public class ${className}<
         root(root);
         sub2sub${sub2subObject}s.putIfAbsent(
              root
-            ,new LinkedHashMap<S2, Set<S2S${sub2subObject}>>());
+            ,new LinkedHashMap<>());
         sub2sub${sub2subObject}s.get(root).putIfAbsent(
              sub2
-            ,new LinkedHashSet<S2S${sub2subObject}>());
+            ,new LinkedHashSet<>());
         sub2sub${sub2subObject}s.get(root).get(sub2).add(
              sub2sub${sub2subObject});
     }
@@ -383,10 +383,10 @@ public class ${className}<
         root(root);
         sub3sub${sub3subObject}s.putIfAbsent(
              root
-            ,new LinkedHashMap<S3, Set<S3S${sub3subObject}>>());
+            ,new LinkedHashMap<>());
         sub3sub${sub3subObject}s.get(root).putIfAbsent(
              sub3
-            ,new LinkedHashSet<S3S${sub3subObject}>());
+            ,new LinkedHashSet<>());
         sub3sub${sub3subObject}s.get(root).get(sub3).add(
              sub3sub${sub3subObject});
     }
@@ -408,10 +408,10 @@ public class ${className}<
         root(root);
         sub4sub${sub4subObject}s.putIfAbsent(
              root
-            ,new LinkedHashMap<S4, Set<S4S${sub4subObject}>>());
+            ,new LinkedHashMap<>());
         sub4sub${sub4subObject}s.get(root).putIfAbsent(
              sub4
-            ,new LinkedHashSet<S4S${sub4subObject}>());
+            ,new LinkedHashSet<>());
         sub4sub${sub4subObject}s.get(root).get(sub4).add(
              sub4sub${sub4subObject});
     }
@@ -461,27 +461,27 @@ public class ${className}<
                  r
 <#if (firstIndependentSubObject <= subObjects)>
 <#list firstIndependentSubObject..subObjects as subObject>
-                ,sub${subObject}s.get(r)
+                ,sub${subObject}s.getOrDefault(r, new LinkedHashSet<>())
 </#list>
 </#if>
 <#if (sub1subObjects > 0) >
 <#list 1..sub1subObjects as sub1subObject>
-                ,sub1sub${sub1subObject}s.get(r)
+                ,sub1sub${sub1subObject}s.getOrDefault(r, new LinkedHashMap<>())
 </#list>
 </#if>
 <#if (sub2subObjects > 0) >
 <#list 1..sub2subObjects as sub2subObject>
-                ,sub2sub${sub2subObject}s.get(r)
+                ,sub2sub${sub2subObject}s.getOrDefault(r, new LinkedHashMap<>())
 </#list>
 </#if>
 <#if (sub3subObjects > 0) >
 <#list 1..sub3subObjects as sub3subObject>
-                ,sub3sub${sub3subObject}s.get(r)
+                ,sub3sub${sub3subObject}s.getOrDefault(r, new LinkedHashMap<>())
 </#list>
 </#if>
 <#if (sub4subObjects > 0) >
 <#list 1..sub4subObjects as sub4subObject>
-                ,sub4sub${sub4subObject}s.get(r)
+                ,sub4sub${sub4subObject}s.getOrDefault(r, new LinkedHashMap<>())
 </#list>
 </#if>
             ));
