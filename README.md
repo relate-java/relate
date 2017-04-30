@@ -1,6 +1,6 @@
 **From relations to object graphs - a relation mapper for POJOs.**
 
-This is a package package for mapping relational data to object
+This is a package for mapping relational data to object
 graphs. The data can originate anywhere, but the most typical use-case
 is result sets produced by joining tables in a relational database. The
 mapping is type-safe, so there's multiple mappers with different
